@@ -43,3 +43,18 @@ let arrayValue = [1, 2, 3, 4, 5]
 reverseArrayInPlace(arrayValue)
 console.log(arrayValue)
 // → [5, 4, 3, 2, 1]
+
+
+function reverseArrayInPlace(arrayValue) {
+  //iterate thru half of original array
+  for (let i = 0; i < Math.floor(arrayValue.length / 2); i++) {
+    let old = arrayValue[i]; //cache original i value
+    arrayValue[i] = arrayValue[arrayValue.length - 1 - i]; //set i value to its "opposite" from end of array
+    arrayValue[arrayValue.length - 1 - i] = old; //set "opposite" to be original i value
+  }
+  return arrayValue;
+}
+
+// Original Array: [1, 2, 3, 4, 5]
+// Step i = 0: [5, 2, 3, 4, 1] (1 and 5 are swapped)
+// Step i = 1: [5, 4, 3, 2, 1] (2 and 4 are swapped)
