@@ -7,42 +7,30 @@
 // The function call range(1, 10, 2) should return [1, 3, 5, 7, 9]. Make sure it also works with negative step values so that range(5, 2, -1) produces [5, 4, 3, 2].
 
 
-
-function range(start, end, step) {
-	let result = []
+function range(start, end, step = 1) {
+	let number = []
   
-  if (step > 1 && step !== undefined) {
-    for(let i = start; i <= end; i += step) {
-      result.push(i)
-      }
-    } else if (step < 1 && step !== undefined){
-    for(let i = start; i <= end; i -= step) {
-      result.push(i)
-    }
+	if(end > start) {
+  	for(let i = start; i <= end; i+= step) {
+  		number.push(i)
+ 		}
+	} else if(end < start) {
+  	for(let i = start; i >= end; i+= step) {
+  		number.push(i)
+ 		}
   }
   
-  if (start < end && step === undefined) {
-     for(let i = start; i <= end; i++) {
-     result.push(i)
-   }
-   	return result
-   } else {
-  	for(let i = start; i >= end; i--) {
-  		result.push(i)
-  	}
-  	return result
-  }  
+  return number
 }
 
-function sum(num) {
-	return num.reduce((acc, c) => acc + c)
+function sum(arr) {
+  return arr.reduce((a,b) => a + b)
 }
+
+
 
 console.log(range(1, 10))
-// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-console.log(range(1, 10, 2))
-// [1, 3, 5, 7, 9]
+console.log(range(5, 10, 2))
 console.log(range(5, 2, -1))
-// [5, 4, 3, 2]
-console.log(sum(range(1, 10)));
-// 55
+
+console.log(sum(range(1,10)))

@@ -55,6 +55,6 @@ function reverseArrayInPlace(arrayValue) {
   return arrayValue;
 }
 
-// Original Array: [1, 2, 3, 4, 5]
+// Original arrayValue: [1, 2, 3, 4, 5]
 // Step i = 0: [5, 2, 3, 4, 1] (1 and 5 are swapped)
 // Step i = 1: [5, 4, 3, 2, 1] (2 and 4 are swapped)
